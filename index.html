@@ -113,18 +113,30 @@ body{
 }
 </style>
 </head>
-<body>
+<body onclick="unlockAudio()">
 
 <div id="root"></div>
 
 <script>
+let music;
+
+function unlockAudio(){
+    if(!music) return;
+
+    music.muted = false;
+    music.volume = 1;
+
+    // ปิด onclick หลังจากเปิดเสียงแล้ว
+    document.body.onclick = null;
+}
+
 const root = document.getElementById("root");
 
 /* วันที่เปลี่ยนหน้า : 8 มกราคม 2569 (ค.ศ.2026-01-08) */
 const switchDate = new Date("2026-01-08T00:00:00");
 const now = new Date();
 
-if (now < switchDate) {
+if(now < switchDate){
 
     root.innerHTML = `
         <div class="maintenance">
@@ -138,22 +150,12 @@ if (now < switchDate) {
         </div>
     `;
 
-    const music = document.getElementById("bgMusic");
+    music = document.getElementById("bgMusic");
 
-    /* เล่นแบบ mute ไว้ก่อน (บาง browser จะเริ่มทันที บางตัวรอ interaction) */
+    // เล่นแบบ mute ไว้ก่อน
     music.play().catch(() => {});
 
-    /* interaction แรก = เปิดเสียง */
-    const unlockAudio = () => {
-        music.muted = false;
-        music.volume = 1;
-    };
-
-    document.addEventListener("mousemove", unlockAudio, { once: true });
-    document.addEventListener("touchstart", unlockAudio, { once: true });
-    document.addEventListener("click", unlockAudio, { once: true });
-
-} else {
+}else{
 
     root.innerHTML = `
         <div style="text-align:center;">
@@ -177,7 +179,6 @@ function goElection(){
     window.location.href = "https://th-dvt.pages.dev/election/";
 }
 </script>
-
 
 </body>
 </html>

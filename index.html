@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>กำลังปรับปรุงเว็บไซต์</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary-color:#0a427c;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+    font-family:'Kanit', sans-serif;
+}
+
+body{
+    background: linear-gradient(180deg, var(--primary-color), #05294f);
+    color:#fff;
+}
+
+#root{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ---------- Maintenance ---------- */
+.maintenance{
+    text-align:center;
+}
+
+.maintenance h1{
+    font-size:2.2rem;
+    margin-bottom:10px;
+}
+
+.fixing{
+    font-size:1.4rem;
+    letter-spacing:2px;
+    position:relative;
+    display:inline-block;
+}
+
+.fixing::after{
+    content:"";
+    animation:dots 1.5s infinite;
+}
+
+@keyframes dots{
+    0%{content:"";}
+    33%{content:".";}
+    66%{content:"..";}
+    100%{content:"...";}
+}
+
+.gear{
+    font-size:3rem;
+    margin-bottom:20px;
+    animation:spin 2s linear infinite;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+/* ---------- Marquee ---------- */
+.marquee-wrapper{
+    width:90%;
+    max-width:900px;
+    overflow:hidden;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.marquee{
+    display:flex;
+    animation:marquee 10s linear infinite;
+}
+
+.marquee img{
+    width:100%;
+    flex-shrink:0;
+}
+
+@keyframes marquee{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-100%);}
+}
+
+.goto-btn{
+    margin-top:25px;
+    padding:14px 32px;
+    background:#f16322;
+    border:none;
+    border-radius:999px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    color:#fff;
+}
+
+.goto-btn:hover{
+    opacity:.9;
+}
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script>
+const root = document.getElementById("root");
+
+/* วันที่เปลี่ยนหน้า : 8 มกราคม 2569 (ค.ศ.2026) */
+const switchDate = new Date("2026-01-08T00:00:00");
+const now = new Date();
+
+if(now < switchDate){
+
+    root.innerHTML = `
+        <div class="maintenance">
+            <div class="gear">⚙️</div>
+            <h1>เว็บไซต์กำลังปรับปรุง</h1>
+            <div class="fixing">กำลังซ่อมแซมระบบ</div>
+
+            <audio autoplay loop>
+                <source src="https://th-dvt.pages.dev/music/เพลงหาเสียงของนายณภัทร%20ปัญโญ%20(อธิรัฐ).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    `;
+
+}else{
+
+    root.innerHTML = `
+        <div style="text-align:center;">
+            <div class="marquee-wrapper">
+                <div class="marquee">
+                    <!-- เปลี่ยนรูปตรงนี้ได้ -->
+                    <img src="https://via.placeholder.com/900x400?text=Election+Campaign" alt="">
+                    <img src="https://via.placeholder.com/900x400?text=Election+Campaign" alt="">
+                </div>
+            </div>
+
+            <button class="goto-btn" onclick="goElection()">
+                ไปยังหน้าเลือกตั้ง
+            </button>
+        </div>
+    `;
+
+    setTimeout(goElection, 10000);
+}
+
+function goElection(){
+    window.location.href = "https://th-dvt.pages.dev/election/";
+}
+</script>
+
+</body>
+</html>

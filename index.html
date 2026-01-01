@@ -120,53 +120,45 @@ body{
 <script>
 const root = document.getElementById("root");
 
-/* วันที่เปลี่ยนหน้า : 8 มกราคม 2569 (ค.ศ.2026) */
+/* วันที่เปลี่ยนหน้า : 8 มกราคม 2569 (ค.ศ.2026-01-08) */
 const switchDate = new Date("2026-01-08T00:00:00");
 const now = new Date();
 
-if(now < switchDate){
+if (now < switchDate) {
 
     root.innerHTML = `
         <div class="maintenance">
             <div class="gear">⚙️</div>
             <h1>เว็บไซต์กำลังปรับปรุง</h1>
             <div class="fixing">กำลังซ่อมแซมระบบ</div>
-        
-            <audio id="bgMusic" loop muted>
+
+            <audio id="bgMusic" loop muted playsinline>
                 <source src="https://th-dvt.pages.dev/music/เพลงหาเสียงของนายณภัทร%20ปัญโญ%20(อธิรัฐ).mp3" type="audio/mpeg">
             </audio>
-
         </div>
-
     `;
+
     const music = document.getElementById("bgMusic");
 
-/* เล่นแบบ mute ไว้ก่อน */
-music.play().catch(() => {});
+    /* เล่นแบบ mute ไว้ก่อน (บาง browser จะเริ่มทันที บางตัวรอ interaction) */
+    music.play().catch(() => {});
 
-/* interaction แรก = เปิดเสียง */
-function unlockAudio(){
-    music.muted = false;
-    music.volume = 1;
+    /* interaction แรก = เปิดเสียง */
+    const unlockAudio = () => {
+        music.muted = false;
+        music.volume = 1;
+    };
 
-    document.removeEventListener("mousemove", unlockAudio);
-    document.removeEventListener("touchstart", unlockAudio);
-    document.removeEventListener("click", unlockAudio);
-}
+    document.addEventListener("mousemove", unlockAudio, { once: true });
+    document.addEventListener("touchstart", unlockAudio, { once: true });
+    document.addEventListener("click", unlockAudio, { once: true });
 
-document.addEventListener("mousemove", unlockAudio, { once: true });
-document.addEventListener("touchstart", unlockAudio, { once: true });
-document.addEventListener("click", unlockAudio, { once: true });
-
-
-
-}else{
+} else {
 
     root.innerHTML = `
         <div style="text-align:center;">
             <div class="marquee-wrapper">
                 <div class="marquee">
-                    <!-- เปลี่ยนรูปตรงนี้ได้ -->
                     <img src="https://via.placeholder.com/900x400?text=Election+Campaign" alt="">
                     <img src="https://via.placeholder.com/900x400?text=Election+Campaign" alt="">
                 </div>
@@ -185,6 +177,7 @@ function goElection(){
     window.location.href = "https://th-dvt.pages.dev/election/";
 }
 </script>
+
 
 </body>
 </html>

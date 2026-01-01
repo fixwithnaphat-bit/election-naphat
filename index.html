@@ -131,12 +131,29 @@ if(now < switchDate){
             <div class="gear">⚙️</div>
             <h1>เว็บไซต์กำลังปรับปรุง</h1>
             <div class="fixing">กำลังซ่อมแซมระบบ</div>
-
-            <audio autoplay loop>
+        
+            <button id="playMusic" class="goto-btn" style="margin-top:30px;">
+                ▶️ เปิดเพลง
+            </button>
+        
+            <audio id="bgMusic" loop>
                 <source src="https://th-dvt.pages.dev/music/เพลงหาเสียงของนายณภัทร%20ปัญโญ%20(อธิรัฐ).mp3" type="audio/mpeg">
             </audio>
         </div>
+
     `;
+    const playBtn = document.getElementById("playMusic");
+    const music = document.getElementById("bgMusic");
+    
+    playBtn.addEventListener("click", () => {
+        music.play().then(() => {
+            playBtn.style.display = "none";
+        }).catch(err => {
+            alert("ไม่สามารถเล่นเพลงอัตโนมัติได้ กรุณาลองอีกครั้ง");
+            console.error(err);
+        });
+    });
+
 
 }else{
 

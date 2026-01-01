@@ -132,27 +132,32 @@ if(now < switchDate){
             <h1>เว็บไซต์กำลังปรับปรุง</h1>
             <div class="fixing">กำลังซ่อมแซมระบบ</div>
         
-            <button id="playMusic" class="goto-btn" style="margin-top:30px;">
-                ▶️ เปิดเพลง
-            </button>
-        
-            <audio id="bgMusic" loop>
+            <audio id="bgMusic" loop muted>
                 <source src="https://th-dvt.pages.dev/music/เพลงหาเสียงของนายณภัทร%20ปัญโญ%20(อธิรัฐ).mp3" type="audio/mpeg">
             </audio>
+
         </div>
 
     `;
-    const playBtn = document.getElementById("playMusic");
     const music = document.getElementById("bgMusic");
-    
-    playBtn.addEventListener("click", () => {
-        music.play().then(() => {
-            playBtn.style.display = "none";
-        }).catch(err => {
-            alert("ไม่สามารถเล่นเพลงอัตโนมัติได้ กรุณาลองอีกครั้ง");
-            console.error(err);
-        });
-    });
+
+/* เล่นแบบ mute ไว้ก่อน */
+music.play().catch(() => {});
+
+/* interaction แรก = เปิดเสียง */
+function unlockAudio(){
+    music.muted = false;
+    music.volume = 1;
+
+    document.removeEventListener("mousemove", unlockAudio);
+    document.removeEventListener("touchstart", unlockAudio);
+    document.removeEventListener("click", unlockAudio);
+}
+
+document.addEventListener("mousemove", unlockAudio, { once: true });
+document.addEventListener("touchstart", unlockAudio, { once: true });
+document.addEventListener("click", unlockAudio, { once: true });
+
 
 
 }else{

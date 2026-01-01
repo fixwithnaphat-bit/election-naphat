@@ -113,7 +113,7 @@ body{
 }
 </style>
 </head>
-<body onclick="unlockAudio()">
+<body>
 
 <div id="root"></div>
 
@@ -144,16 +144,8 @@ if(now < switchDate){
             <h1>เว็บไซต์กำลังปรับปรุง</h1>
             <div class="fixing">กำลังซ่อมแซมระบบ</div>
 
-            <audio id="bgMusic" loop muted playsinline>
-                <source src="https://th-dvt.pages.dev/music/เพลงหาเสียงของนายณภัทร%20ปัญโญ%20(อธิรัฐ).mp3" type="audio/mpeg">
-            </audio>
         </div>
     `;
-
-    music = document.getElementById("bgMusic");
-
-    // เล่นแบบ mute ไว้ก่อน
-    music.play().catch(() => {});
 
 }else{
 

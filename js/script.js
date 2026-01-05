@@ -11,7 +11,7 @@
             
             if (today >= targetDate) {
                 alert('ยินดีต้อนรับสู่หน้าหลัก! ขณะนี้อยู่ในระหว่างการพัฒนา');
-                // ตรงนี้สามารถเปลี่ยนหน้าได้ เช่น window.location.href = "main.html";
+                // ตรงนี้สามารถเปลี่ยนหน้าได้ เช่น window.location.href = "https://th-dvt.pages.dev/election/";
             } else {
                 const daysUntil = Math.ceil((targetDate - today) / (1000 * 60 * 60 * 24));
                 alert(`หน้าหลักจะเปิดให้ใช้งานในวันที่ 8 ของเดือนนี้ (อีกประมาณ ${daysUntil} วัน)`);

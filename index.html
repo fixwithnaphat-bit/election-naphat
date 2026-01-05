@@ -3,178 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เลือกตั้งสภานักศึกษา สจล. | นายณภัทร ปัญโญ</title>
+    <title>ณภัทร ปัญโญ | สภานักศึกษา สจล.</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo-section">
-                <div class="logo">
-                    <i class="fas fa-vote-yea"></i>
-                </div>
-                <div class="logo-text">
-                    <h1>ณภัทร (อธิรัฐ) ปัญโญ</h1>
-                    <p>ผู้สมัครผู้แทนนักศึกษา - สภานักศึกษา 2569</p>
-                </div>
+
+    <header>
+        <div class="logo">KMITL <span>STUDENT COUNCIL</span></div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="profile-tag">เบอร์ 1 (สมมติ)</div>
+            <h1>นายณภัทร ปัญโญ</h1>
+            <p class="subtitle">คณะวิศวกรรมศาสตร์ ภาควิชาวิศวกรรมเครื่องกล<br>สาขาวิศวกรรมขนส่งทางราง</p>
+            
+            <button id="main-entry-btn" class="btn-primary">เข้าสู่หน้าหลัก</button>
+            <p id="lock-notice" class="lock-notice">สามารถเข้าถึงได้ในวันที่ 8 มกราคมนี้</p>
+        </section>
+
+        <section class="marquee-wrapper">
+            <div class="marquee-content">
+                <div class="policy-card"><span>1</span><p>รับฟังปัญหานักศึกษาอย่างตรงจุด</p></div>
+                <div class="policy-card"><span>2</span><p>เป็นปากเป็นเสียงให้นักศึกษา</p></div>
+                <div class="policy-card"><span>3</span><p>ทำจริง ติดตามผล และสร้างการเปลี่ยนแปลง</p></div>
+                <div class="policy-card"><span>4</span><p>ทำงานร่วมกับองค์กรภายในสถาบัน</p></div>
+                <div class="policy-card"><span>5</span><p>ร่วมมือและสานต่อภารกิจเพื่อนักศึกษา</p></div>
+                <div class="policy-card"><span>6</span><p>ผลักดันสิทธิและสวัสดิการของนักศึกษา</p></div>
+                <div class="policy-card"><span>1</span><p>รับฟังปัญหานักศึกษาอย่างตรงจุด</p></div>
+                <div class="policy-card"><span>2</span><p>เป็นปากเป็นเสียงให้นักศึกษา</p></div>
+                <div class="policy-card"><span>3</span><p>ทำจริง ติดตามผล และสร้างการเปลี่ยนแปลง</p></div>
             </div>
-            <p>ทีมอาสาพัฒนาไทย (สจล.) | นโยบายเพื่ออนาคตนักศึกษาที่ดีกว่า</p>
-        </header>
-        
-        <!-- Candidate Info -->
-        <!--<div class="candidate-info">
-            <div class="candidate-photo">
-                <i class="fas fa-user-graduate"></i>
-            </div>
-            <div class="candidate-details">
-                <h2>นายณภัทร ปัญโญ</h2>
-                <p><i class="fas fa-university"></i> คณะวิศวกรรมศาสตร์</p>
-                <p><i class="fas fa-book"></i> ภาควิชาวิศวกรรมเครื่องกล</p>
-                <p><i class="fas fa-train"></i> สาขาวิศวกรรมขนส่งทางราง</p>
-                <p><i class="fas fa-users"></i> ทีมอาสาพัฒนา สจล.</p>
-            </div>
-        </div>-->
-        
-        <!-- Policy Cards Marquee -->
-        <div class="policy-marquee-container">
-            <div class="policy-label">นโยบายหลัก 6 ประการ</div>
-            <div class="policy-marquee">
-                <div class="policy-track" id="policyTrack">
-                    <!-- Policy Card 1 -->
-                    <div class="policy-card">
-                        <div class="policy-number">1</div>
-                        <h3>รับฟังปัญหานักศึกษาอย่างตรงจุด</h3>
-                        <p>เปิดช่องทางสื่อสารหลากหลาย พร้อมรับฟังปัญหาและความต้องการของนักศึกษาอย่างจริงจัง</p>
-                    </div>
-                    
-                    <!-- Policy Card 2 -->
-                    <div class="policy-card">
-                        <div class="policy-number">2</div>
-                        <h3>เป็นปากเป็นเสียงให้นักศึกษา</h3>
-                        <p>เสนอปัญหาและแนวทางแก้ไขต่อฝ่ายบริหารอย่างต่อเนื่อง เพื่อผลักดันให้เกิดการเปลี่ยนแปลงจริง</p>
-                    </div>
-                    
-                    <!-- Policy Card 3 -->
-                    <div class="policy-card">
-                        <div class="policy-number">3</div>
-                        <h3>ทำจริง ติดตามผล และสร้างการเปลี่ยนแปลง</h3>
-                        <p>ไม่เพียงแต่พูด แต่ทำจริง ติดตามผลงาน และสร้างการเปลี่ยนแปลงที่เป็นรูปธรรม</p>
-                    </div>
-                    
-                    <!-- Policy Card 4 -->
-                    <div class="policy-card">
-                        <div class="policy-number">4</div>
-                        <h3>ทำงานร่วมกับองค์กรภายในสถาบัน</h3>
-                        <p>ร่วมมือกับทุกองค์กรนักศึกษา เพื่อขับเคลื่อนกิจกรรมและนโยบายที่เกิดประโยชน์สูงสุด</p>
-                    </div>
-                    
-                    <!-- Policy Card 5 -->
-                    <div class="policy-card">
-                        <div class="policy-number">5</div>
-                        <h3>ร่วมมือและสานต่อภารกิจเพื่อนักศึกษาอย่างต่อเนื่อง</h3>
-                        <p>สานต่องานจากรุ่นพี่และพัฒนาต่อยอดเพื่อสร้างความยั่งยืนในการทำงาน</p>
-                    </div>
-                    
-                    <!-- Policy Card 6 -->
-                    <div class="policy-card">
-                        <div class="policy-number">6</div>
-                        <h3>ผลักดันสิทธิและสวัสดิการของนักศึกษา</h3>
-                        <p>เสนอและผลักดันสิทธิ สวัสดิการ และความปลอดภัยของนักศึกษาในทุกด้าน</p>
-                    </div>
-                    
-                    <!-- Repeat for seamless scrolling -->
-                    <!-- Policy Card 1 -->
-                    <div class="policy-card">
-                        <div class="policy-number">1</div>
-                        <h3>รับฟังปัญหานักศึกษาอย่างตรงจุด</h3>
-                        <p>เปิดช่องทางสื่อสารหลากหลาย พร้อมรับฟังปัญหาและความต้องการของนักศึกษาอย่างจริงจัง</p>
-                    </div>
-                    
-                    <!-- Policy Card 2 -->
-                    <div class="policy-card">
-                        <div class="policy-number">2</div>
-                        <h3>เป็นปากเป็นเสียงให้นักศึกษา</h3>
-                        <p>เสนอปัญหาและแนวทางแก้ไขต่อฝ่ายบริหารอย่างต่อเนื่อง เพื่อผลักดันให้เกิดการเปลี่ยนแปลงจริง</p>
-                    </div>
-                    
-                    <!-- Policy Card 3 -->
-                    <div class="policy-card">
-                        <div class="policy-number">3</div>
-                        <h3>ทำจริง ติดตามผล และสร้างการเปลี่ยนแปลง</h3>
-                        <p>ไม่เพียงแต่พูด แต่ทำจริง ติดตามผลงาน และสร้างการเปลี่ยนแปลงที่เป็นรูปธรรม</p>
-                    </div>
-                    
-                    <!-- Policy Card 4 -->
-                    <div class="policy-card">
-                        <div class="policy-number">4</div>
-                        <h3>ทำงานร่วมกับองค์กรภายในสถาบัน</h3>
-                        <p>ร่วมมือกับทุกองค์กรนักศึกษา เพื่อขับเคลื่อนกิจกรรมและนโยบายที่เกิดประโยชน์สูงสุด</p>
-                    </div>
-                    
-                    <!-- Policy Card 5 -->
-                    <div class="policy-card">
-                        <div class="policy-number">5</div>
-                        <h3>ร่วมมือและสานต่อภารกิจเพื่อนักศึกษาอย่างต่อเนื่อง</h3>
-                        <p>สานต่องานจากรุ่นพี่และพัฒนาต่อยอดเพื่อสร้างความยั่งยืนในการทำงาน</p>
-                    </div>
-                    
-                    <!-- Policy Card 6 -->
-                    <div class="policy-card">
-                        <div class="policy-number">6</div>
-                        <h3>ผลักดันสิทธิและสวัสดิการของนักศึกษา</h3>
-                        <p>เสนอและผลักดันสิทธิ สวัสดิการ และความปลอดภัยของนักศึกษาในทุกด้าน</p>
-                    </div>
-                </div>
-            </div>
+        </section>
+    </main>
+
+    <div id="chatbot-trigger" class="chatbot-fab">💬</div>
+    <div id="chatbot-window" class="chat-container hidden">
+        <div class="chat-header">
+            อาสาพัฒนา สจล. Chatbot
+            <span id="close-chat">×</span>
         </div>
-        
-        <!-- Main Button -->
-        <div class="main-button-container">
-            <a href="#" id="mainButton" class="main-button">
-                <i class="fas fa-door-open"></i>เข้าสู่หน้าหลัก
-            </a>
-            <span class="button-date">(สามารถใช้งานได้ตั้งแต่วันที่ 8 เป็นต้นไป)</span>
+        <div id="chat-body" class="chat-body">
+            <div class="msg bot">สวัสดีครับ! ทีมอาสาพัฒนา สจล. ยินดีตอบคำถามครับ ท่านอยากทราบเรื่องอะไรครับ?</div>
         </div>
-        
-        <footer>
-            <p>© 2026 นายณภัทร ปัญโญ | ทีมอาสาพัฒนาไทย (สจล.) | สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
-            <p>โทรศัพท์: 095 460 3870 | อีเมล: fixwithnaphat@gmail.com</p>
-        </footer>
-    </div>
-    
-    <!-- Chatbot -->
-    <div class="chatbot-container">
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <h3><i class="fas fa-robot"></i> แชทบอตทีมอาสาพัฒนา สจล.</h3>
-                <button class="close-chatbot" id="closeChatbot">&times;</button>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot-message">
-                    <div class="message-content">
-                        สวัสดีครับ! นายณภัทร ปัญโญ และทีมอาสาพัฒนา สจล. ยินดีตอบคำถามครับ
-                        <br><br>
-                        คุณสามารถสอบถามเกี่ยวกับ:
-                        <br>
-                        • ข้อมูลผู้สมัคร
-                        <br>
-                        • นโยบายทั้ง 6 ประการ
-                        <br>
-                        • วิธีการเลือกตั้ง
-                        <br>
-                        • ข้อมูลเพิ่มเติม
-                    </div>
-                </div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="userInput" placeholder="พิมพ์ข้อความที่นี่...">
-                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-        <div class="chatbot-button" id="chatbotButton">
-            <i class="fas fa-robot"></i>
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="พิมพ์คำถามที่นี่...">
+            <button id="send-btn">ส่ง</button>
         </div>
     </div>
 

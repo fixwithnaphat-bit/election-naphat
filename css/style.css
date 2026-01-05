@@ -1,0 +1,423 @@
+
+        :root {
+            --primary-color: #093a6e;
+            --secondary-color: #60cb30;
+            --dark-blue: #05294f;
+            --light-blue: #0f4c8a;
+            --white: #ffffff;
+            --light-gray: #f5f7fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+    		font-family: "Prompt", sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(180deg, var(--primary-color), var(--dark-blue));
+            color: var(--white);
+            min-height: 100vh;
+            /*padding-bottom: 120px;*/
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .logo i {
+            font-size: 30px;
+            color: var(--primary-color);
+        }
+        
+        .logo-text h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Candidate Info */
+        .candidate-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .candidate-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 5px solid var(--secondary-color);
+        }
+        
+        .candidate-photo i {
+            font-size: 70px;
+            color: var(--primary-color);
+        }
+        
+        .candidate-details h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .candidate-details p {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        /* Policy Cards Marquee */
+        .policy-marquee-container {
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .policy-label {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-blue);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .policy-marquee {
+            overflow: hidden;
+            position: relative;
+            height: 280px;
+        }
+        
+        .policy-track {
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: policyScroll 60s linear infinite;
+        }
+        
+        @keyframes policyScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .policy-card {
+            width: 300px;
+            height: 240px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-right: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+            transition: transform 0.3s, background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .policy-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            color: var(--dark-blue);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .policy-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .policy-card p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        /* Main Button */
+        .main-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .main-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-blue);
+            font-size: 20px;
+            font-weight: bold;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background-color: #76e641;
+        }
+        
+        .main-button:active {
+            transform: translateY(1px);
+        }
+        
+        .main-button i {
+            margin-right: 10px;
+        }
+        
+        .button-date {
+            display: block;
+            font-size: 16px;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+        
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .chatbot-button {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: var(--dark-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .chatbot-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .chatbot-window {
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background-color: var(--light-gray);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chatbot-header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .chatbot-header h3 {
+            font-size: 18px;
+        }
+        
+        .close-chatbot {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+        }
+        
+        .bot-message {
+            align-self: flex-start;
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        
+        .message-content {
+            padding: 12px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .bot-message .message-content {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-bottom-left-radius: 5px;
+        }
+        
+        .user-message .message-content {
+            background-color: var(--secondary-color);
+            color: var(--dark-blue);
+            border-bottom-right-radius: 5px;
+        }
+        
+        .chatbot-input {
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            display: flex;
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            font-size: 14px;
+            outline: none;
+        }
+        
+        .chatbot-input button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .chatbot-input button:hover {
+            background-color: var(--light-blue);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .policy-marquee {
+                height: 260px;
+            }
+            
+            .policy-card {
+                width: 280px;
+                height: 220px;
+                padding: 20px;
+            }
+            
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
+            }
+            
+            .candidate-details h2 {
+                font-size: 26px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .policy-marquee {
+                height: 550px;
+            }
+            
+            .policy-track {
+                flex-wrap: wrap;
+                animation: none;
+                position: relative;
+                justify-content: center;
+            }
+            
+            .policy-card {
+                width: 100%;
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+        }

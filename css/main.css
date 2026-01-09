@@ -1,0 +1,417 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- 1. SETUP & VARIABLES (Theme พรรคประชาชน) --- */
+:root {
+    --bg-deep: #0f1e3c;
+    /* พื้นหลังน้ำเงินเข้ม */
+    --bg-card: #1c2e52;
+    /* สีการ์ด */
+    --bg-card-hover: #253a63;
+    /* สีการ์ดตอนชี้ */
+    --primary-orange: #60cb30;
+    /* สีส้มเอกลักษณ์ */
+    --text-white: #ffffff;
+    --text-gray: #b0b8c6;
+    --nav-bg: rgba(15, 30, 60, 0.95);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-white);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. NAVBAR (li a Structure) --- */
+header {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.8rem 0;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-list {
+    display: flex;
+    gap: 30px;
+}
+
+.menu-list li a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-gray);
+    position: relative;
+}
+
+.menu-list li a:hover,
+.menu-list li a.active {
+    color: var(--primary-orange);
+}
+
+/* Mobile Menu handling would go here */
+
+/* --- 3. HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+    height: calc(100vh - 66.4px);
+    align-items: center;
+    display: flex;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: var(--primary-orange);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.candidate-card {
+    background: linear-gradient(135deg, rgba(244, 121, 51, 0.1) 0%, rgba(28, 46, 82, 0.5) 100%);
+    border: 1px solid var(--primary-orange);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+/* --- 4. FILTER TABS --- */
+.filter-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.filter-pill {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-gray);
+    padding: 8px 24px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Kanit';
+    font-size: 1rem;
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+    background: var(--primary-orange);
+    border-color: var(--primary-orange);
+    color: white;
+    box-shadow: 0 0 15px #61cb304e;
+}
+
+/* --- 5. POLICY GRID (The Core) --- */
+.policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    padding-bottom: 80px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-orange);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: var(--bg-card-hover);
+}
+#policies 
+.card-img-top {
+    height: 160px;
+}
+
+.card-img-top {
+    background: #23365d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.card-img-top img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #1c2e5280;
+}
+
+.card-tag {
+    background: #61cb3015;
+    color: var(--primary-orange);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.card-desc {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    width: 100%;
+    margin-top: auto;
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-orange);
+    transition: 0.3s;
+}
+
+.card:hover .btn-icon {
+    background: var(--primary-orange);
+    color: white;
+}
+
+/* --- 7. FOOTER --- */
+footer {
+    background-color: #081020;
+    padding: 60px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    /* ซ่อนเมนูในมือถือแบบง่ายๆไปก่อน */
+    .policy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+::selection {
+    background-color: #60cb30; /* พื้นหลังสีแดง */
+    color: #ffffff;            /* ตัวหนังสือสีขาว */
+}
+
+/* สำหรับ Firefox (บางเวอร์ชันต้องเขียนแยก) */
+::-moz-selection {
+    background-color: #60cb30;
+    color: #ffffff;
+}
+
+.section-policies-title {
+    padding-top: 66.4px;
+    padding-bottom: 33.2px;
+}
+
+.section-policies-title span {
+    padding-left: 20px;
+    border-left: 5px solid #60cb30;
+}
+
+.section-title {
+    padding-bottom: 33.2px;
+}
+
+.section-title span {
+    padding-left: 20px;
+    border-left: 5px solid #60cb30;
+}
+
+/* FULLSCREEN LOADER */
+.loader {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #0a427c 0%, #061c36 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity .6s ease, visibility .6s ease;
+}
+
+/* HIDE STATE */
+.loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* CORE ANIMATION */
+.loader-core {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.loader-core span {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f16322;
+    animation: spin 1.4s linear infinite;
+}
+
+.loader-core span:nth-child(2) {
+    inset: 10px;
+    border-top-color: #ffffff;
+    animation-duration: 1.8s;
+}
+
+.loader-core span:nth-child(3) {
+    inset: 20px;
+    border-top-color: #66cb41;
+    animation-duration: 2.2s;
+}
+
+.loader-core span:nth-child(4) {
+    inset: 30px;
+    border-top-color: #f16322;
+    animation-duration: 2.6s;
+}
+
+/* TEXT */
+.loader p {
+    margin-top: 24px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #fff;
+    opacity: .85;
+}
+
+/* KEYFRAME */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.works-section {
+    margin-bottom: 3em;
+}
+
+.inline-ex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--primary-orange);
+    font-weight: 500;
+}
